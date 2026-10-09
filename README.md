@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cashomon
 
 Find multiple well-performing models, then compare what they rely on.
@@ -255,3 +256,6 @@ including Git 2.25.1. Commit the package source, including `NAMESPACE` and
 workspace metadata are excluded by `.gitignore`. See
 [GitHub's import instructions](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
 for authentication and existing-repository cases.
+=======
+# CASHomon_Sets
+>>>>>>> origin/main
