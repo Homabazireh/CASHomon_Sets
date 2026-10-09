@@ -33,6 +33,25 @@ base-R numerical tests and an additional audit of 30 randomly generated
 positive-definite GP priors against independent batch posterior calculations
 within 1e-9. No numerical implementation was changed in the layout update.
 
+## Executed supplemental results
+
+`inst/examples/offline-workflow.R` was executed using the cached R packages.
+Its outputs are in `artifacts/direct-r-demo/`: 16 evaluated configurations,
+12 retained fitted models across three classes, 48 model-feature mean PFI
+values, 1,440 permutation scores, and six figures in both PNG and PDF.
+
+This is a direct-R implementation of loss-difference PFI on simulated data;
+it does not execute or validate xplainfi. The 350 training, 175 validation and
+175 explanation rows are disjoint. TruVaRImp chose 10 evaluations, followed
+by 6 extra fits to verify the entire finite candidate pool.
+
+The script checks membership, score aggregation, complete model coverage,
+unchanged fitted models, and the PFI loss-difference identity. An independent
+linear-model algebra check validates its permutation scores to 1e-10.
+Figures were rendered and visually inspected. CSV exports include the full
+data, predictions and permutation plan, with seeds, package versions and file
+checksums for reproduction. The local model RDS is excluded from Git.
+
 ## Remaining validation
 
 `mlr3`, `xplainfi`, `mlr3learners`, `testthat` and `roxygen2` are unavailable
@@ -40,7 +59,7 @@ locally, and package downloads are blocked. Pandoc is also absent.
 
 The actual mlr3 model-selection workflow, xplainfi PFI calculations, and
 regression/classification integration tests have not been executed here.
-No PFI tables or figures from fitted models are presented as completed results.
+The supplemental direct-R figures do not remove this xplainfi integration gap.
 
 GitHub Actions is configured to install dependencies and Pandoc, regenerate
 documentation with roxygen2, run full package checks with testthat and vignettes,

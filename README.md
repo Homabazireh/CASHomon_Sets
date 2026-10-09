@@ -10,6 +10,59 @@ retains fitted models meeting an empirical loss threshold, and uses
 **every retained model**. The PFI definition is the loss increase after permuting
 a feature, following [Breiman (2001)](https://doi.org/10.1023/A:1010933404324).
 
+## Computed demonstration results
+
+The [results report and figure gallery](artifacts/direct-r-demo/README.md)
+contains an executed simulation with **16 candidates, 12 retained models across
+three model classes, and 1,440 permutation scores**. TruVaRImp used 10 active
+evaluations; 6 further fits verified the remaining candidates. The best validation
+MSE was 0.835628 and the 35% tolerance gave a membership threshold of 1.128098.
+
+**These figures use PFI computed directly in R as a fallback because xplainfi was
+unavailable. They are simulated-data results, not xplainfi outputs.** The original
+xplainfi workflow below remains available for reproduction with its dependencies.
+
+![PFI across retained models, computed directly in R](artifacts/direct-r-demo/pfi-cloud.png)
+
+The gallery includes six figures in PNG and PDF: feature-importance clouds,
+heatmaps, ranks, importance versus loss, model performance, and search progress.
+Download the [per-model PFI table](artifacts/direct-r-demo/pfi-by-model.csv),
+[individual permutation scores](artifacts/direct-r-demo/pfi-permutations.csv),
+and [candidate results](artifacts/direct-r-demo/candidates.csv). Seeds, data
+partitions, holdout predictions, and permutation assignments are also recorded.
+
+To reproduce this supplemental demonstration:
+
+```sh
+Rscript inst/examples/offline-workflow.R
+```
+
+It requires the installed `cashomon`, `rpart`, `ranger`, and `ggplot2` packages.
+
+## Raw demonstration data
+
+The complete [raw simulated dataset](inst/extdata/simulated-data.csv) contains
+700 observations, four predictors (`signal`, `proxy`, `modifier`, `noise`), and
+the response `target`. Each row has a unique `row_id` and a `split` label:
+350 training, 175 validation, and 175 PFI holdout observations. Use only the four
+predictors as model inputs; `row_id` and `split` are metadata.
+
+This is the dataset used for the demonstration figures above. It is synthetic,
+generated with seed 2603; the paper's experimental datasets are not included.
+See the [data dictionary and generation details](inst/extdata/README.md).
+The same CSV is saved with the [result artifacts](artifacts/direct-r-demo/simulated-data.csv)
+and bundled in the installed R package:
+
+```r
+# From the repository root:
+raw_data <- read.csv("inst/extdata/simulated-data.csv")
+
+# Or after installing cashomon:
+raw_data <- read.csv(system.file("extdata", "simulated-data.csv",
+                                package = "cashomon", mustWork = TRUE))
+table(raw_data$split)
+```
+
 ## Install
 
 From this directory, with R 4.1 or later:
@@ -193,7 +246,9 @@ CASHomon_Sets/
 │       └── test-truvarimp.R
 ├── vignettes/
 │   └── cashomon.Rmd
-├── inst/examples/
+├── inst/
+│   ├── examples/
+│   └── extdata/               # raw simulated CSV and data dictionary
 ├── tools/document.R
 ├── NEWS.md
 ├── README.md

@@ -1,0 +1,2 @@
+"backend","simulated_data","data_seed","model_seed","permutation_seed","n_training","n_validation","n_pfi_holdout","candidates","search_evaluations","additional_verification_fits","retained_models","retained_classes","epsilon_rel","epsilon_abs","best_validation_mse","threshold","permutations_per_feature","pfi_mean_rows","permutation_rows"
+"direct_R_permutation",TRUE,2603,42,42,350,175,175,16,10,6,12,3,0.35,0,0.835628340865457,1.12809826016837,30,48,1440

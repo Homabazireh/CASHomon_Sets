@@ -2,7 +2,7 @@
 .RData
 *.Rcheck/
 cashomon_*.tar.gz
-artifacts/*.rds
+artifacts/**/*.rds
 .agents/
 .aws/
 .codex/
