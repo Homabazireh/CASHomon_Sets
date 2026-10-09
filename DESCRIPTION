@@ -1,0 +1,19 @@
+Package: cashomon
+Title: CASHomon Model Sets and Permutation Feature Importance
+Version: 0.1.0
+Authors@R: person("CASHomon", "Contributors", role = c("aut", "cre"),
+    email = "maintainer@example.org")
+Description: Implements the finite-domain TruVaRImp algorithm of Ewald et al.
+    (2026) <doi:10.48550/arXiv.2603.15321> for finding near-optimal model
+    configurations across model classes. Fits and verifies candidate models
+    using 'mlr3', computes permutation feature importance for each retained
+    fitted model using 'xplainfi', and visualizes explanation variability.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: stats, utils, grDevices
+Suggests: ggplot2 (>= 3.4.0), mlr3 (>= 1.1.0), xplainfi (>= 1.2.0),
+    R6, mlr3learners, ranger, rpart, testthat (>= 3.0.0),
+    knitr, rmarkdown, roxygen2 (>= 7.3.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

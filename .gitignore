@@ -1,0 +1,12 @@
+.Rhistory
+.RData
+*.Rcheck/
+cashomon_*.tar.gz
+artifacts/*.rds
+.agents/
+.aws/
+.codex/
+inst/doc/
+vignettes/*.html
+vignettes/*.md
+vignettes/*_files/

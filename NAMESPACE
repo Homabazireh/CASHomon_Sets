@@ -1,0 +1,15 @@
+# Generated from R/ roxygen tags by the offline documentation bootstrap.
+# Regenerate with Rscript tools/document.R.
+
+export(cashomon_candidates)
+export(cashomon_kernel)
+export(cashomon_pfi)
+export(fit_cashomon)
+export(plot_cashomon_pfi)
+export(plot_cashomon_search)
+export(summarise_cashomon_pfi)
+export(truvarimp)
+importFrom(utils,globalVariables)
+S3method(print,cashomon_pfi)
+S3method(print,cashomon_set)
+S3method(print,truvarimp_result)

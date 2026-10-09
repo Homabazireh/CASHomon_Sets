@@ -1,0 +1,6 @@
+bibentry(bibtype = "Article",
+  title = "CASHomon Sets: Efficient Rashomon Sets Across Multiple Model Classes and their Hyperparameters",
+  author = c(person("Fiona Katharina", "Ewald"), person("Martin", "Binder"),
+    person("Bernd", "Bischl"), person("Matthias", "Feurer"), person("Giuseppe", "Casalicchio")),
+  year = "2026", journal = "arXiv preprint arXiv:2603.15321",
+  doi = "10.48550/arXiv.2603.15321")
