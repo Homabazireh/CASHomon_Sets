@@ -81,6 +81,7 @@ scalar objective, independently of mlr3.
 ```r
 library(cashomon)
 library(mlr3)
+library(xplainfi)   # attach before creating the task (registers mlr3 column roles)
 
 task <- as_task_regr(mtcars, target = "mpg")
 set.seed(42)

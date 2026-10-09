@@ -1,5 +1,6 @@
 library(cashomon)
 library(mlr3)
+library(xplainfi)   # attach before building the task (registers mlr3 column roles)
 task <- as_task_classif(iris, target = "Species")
 # Stratified train / validation / PFI split for this small example.
 set.seed(42)

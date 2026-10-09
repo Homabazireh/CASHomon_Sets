@@ -3,6 +3,7 @@
 library(cashomon)
 library(mlr3)
 library(mlr3learners)
+library(xplainfi)   # attach before building the task (registers mlr3 column roles)
 
 set.seed(2603)
 n <- 700L
