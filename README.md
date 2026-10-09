@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # cashomon
 
 Find multiple well-performing models, then compare what they rely on.
@@ -232,22 +231,32 @@ the full regression example, and saves the resulting artifacts. Before public
 distribution, replace the placeholder maintainer in `DESCRIPTION`.
 
 The local implementation and validation record is in
-[VALIDATION.md](VALIDATION.md).
+[VALIDATION.md](VALIDATION.md). Prospective reviewers can start with
+[REVIEWER_REPORT.md](REVIEWER_REPORT.md) for the implementation scope,
+validation evidence, limitations, and reproduction steps.
 
 ## Upload to GitHub
 
 The GitHub repository is
 [Homabazireh/CASHomon_Sets](https://github.com/Homabazireh/CASHomon_Sets).
-For the first upload, run these commands from this package directory in a
-terminal with write access to `.git/` and GitHub authentication configured:
+To upload new or changed files from an existing checkout, run these commands
+one at a time from the package directory in a terminal with write access to
+`.git/` and GitHub authentication configured:
 
 ```sh
-git init
-git symbolic-ref HEAD refs/heads/main
+git status
 git add .
-git commit -m "Initial cashomon R package"
-git remote add origin https://github.com/Homabazireh/CASHomon_Sets.git
+git commit -m "Add new files"
+git pull --rebase origin main
 git push -u origin main
 ```
 
+Before staging, inspect `git status` and finish any pending merge or rebase.
+If there are no new changes to commit, skip `git add` and `git commit`.
+If a command reports a conflict or error, resolve it before continuing.
+Commit package source, including `NAMESPACE` and `man/`; `.gitignore` excludes
+build archives, check directories, and local workspace metadata.
 
+After a successful push, open
+[the reviewer report on GitHub](https://github.com/Homabazireh/CASHomon_Sets/blob/main/REVIEWER_REPORT.md)
+to confirm it is available on `main`.

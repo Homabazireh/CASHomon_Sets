@@ -7,3 +7,6 @@
 * Provide importance clouds, heatmaps, feature-rank and performance plots.
 * Organize source files in a flat `R/` directory with roxygen documentation,
   a testthat edition 3 suite and a getting-started vignette.
+* Add a reviewer report covering implementation, validation limits and
+  reproduction steps.
+* Clarify GitHub update commands and link the reviewer report from the README.
