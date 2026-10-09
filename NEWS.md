@@ -10,3 +10,4 @@
 * Add a reviewer report covering implementation, validation limits and
   reproduction steps.
 * Clarify GitHub update commands and link the reviewer report from the README.
+* Remove an accidentally created malformed README copy.
