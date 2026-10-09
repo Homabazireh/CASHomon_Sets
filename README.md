@@ -250,12 +250,4 @@ git remote add origin https://github.com/Homabazireh/CASHomon_Sets.git
 git push -u origin main
 ```
 
-The first two commands replace `git init -b main` for older Git versions,
-including Git 2.25.1. Commit the package source, including `NAMESPACE` and
-`man/`. Build archives, check directories and local
-workspace metadata are excluded by `.gitignore`. See
-[GitHub's import instructions](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
-for authentication and existing-repository cases.
-=======
-# CASHomon_Sets
->>>>>>> origin/main
+
